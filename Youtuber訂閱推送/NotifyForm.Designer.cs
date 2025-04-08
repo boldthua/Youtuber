@@ -1,4 +1,7 @@
-﻿namespace Youtuber訂閱推送
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Youtuber訂閱推送
 {
     partial class NotifyForm
     {
@@ -33,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            textbox1 = new TextBox();
+            textbox2 = new TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -88,6 +93,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 678);
+
+
+            textbox1.Multiline = true;
+            textbox1.ScrollBars = ScrollBars.Vertical;
+            textbox1.WordWrap = true;
+            textbox1.Width = flowLayoutPanel1.ClientSize.Width;
+            textbox1.Height = flowLayoutPanel1.ClientSize.Height;
+            textbox1.Font = new Font("Microsoft JhengHei", 14, FontStyle.Bold);
+            textbox1.ForeColor = Color.OrangeRed;
+
+            textbox2.Multiline = true;
+            textbox2.ScrollBars = ScrollBars.Vertical;
+            textbox2.WordWrap = true;
+            textbox2.Width = flowLayoutPanel2.ClientSize.Width;
+            textbox2.Height = flowLayoutPanel2.ClientSize.Height;
+            textbox2.Font = new Font("Microsoft JhengHei", 14, FontStyle.Bold);
+            textbox2.ForeColor = Color.OrangeRed;
+
+
+            this.flowLayoutPanel2.Controls.Add(textbox2);
+            this.flowLayoutPanel1.Controls.Add(textbox1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
@@ -95,6 +121,7 @@
             this.Controls.Add(this.button1);
             this.Name = "NotifyForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.NotifyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +134,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private TextBox textbox1;
+        private TextBox textbox2;
     }
 }
 
